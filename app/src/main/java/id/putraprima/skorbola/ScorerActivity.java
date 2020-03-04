@@ -9,20 +9,22 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class ScorerActivity extends AppCompatActivity {
-    private EditText scoreName;
+    private EditText scorerName;
     String nameScore;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scorer);
-        scoreName = findViewById(R.id.edit_score_name);
+        scorerName = findViewById(R.id.edit_score_name);
 
     }
-    public void handleKirim (View view){
-        nameScore = scoreName.getText().toString();
+
+    public void handleKirim(View view) {
+        nameScore = scorerName.getText().toString();
         if (nameScore.equals("")){
-            Toast.makeText(this, "jangan kosong", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Isi dulu", Toast.LENGTH_SHORT).show();
         } else {
             Intent intent = new Intent();
             intent.putExtra("scorerName", nameScore);

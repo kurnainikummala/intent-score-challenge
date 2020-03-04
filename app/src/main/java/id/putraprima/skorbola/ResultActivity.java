@@ -6,9 +6,9 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 public class ResultActivity extends AppCompatActivity {
-    TextView resultText, messageText, scoreText;
-    String result, message, score;
 
+    TextView resultText, messageText, scorerText;
+    String result, messages, scorer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,18 +17,18 @@ public class ResultActivity extends AppCompatActivity {
 
         resultText = findViewById(R.id.result);
         messageText = findViewById(R.id.winner);
-        scoreText = findViewById(R.id.result_name);
+        scorerText = findViewById(R.id.result_name);
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null){
             result = bundle.getString("result");
-            message = bundle.getString("message");
-            score =  bundle.getString("score");
+            messages = bundle.getString("messages");
+            scorer = bundle.getString("scorer");
 
-            scoreText.setText(score);
-            messageText.setText(message);
+            scorerText.setText(scorer);
+            messageText.setText(messages);
             resultText.setText(result);
-            System.out.println("OK"+score);
+            System.out.println("Okeee  " + scorer);
         }
     }
 }
